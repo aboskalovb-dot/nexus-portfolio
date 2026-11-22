@@ -57,10 +57,35 @@ footer{background:rgba(4,5,13,.25)}
 @media(max-width:420px){.hero-visual{height:320px}.card-front{scale:.82}.card-back{scale:.74;right:-2%}.chip-a{left:-3%}.chip-b{right:-4%}.hero-proof{font-size:10px;gap:10px}.hero-proof b{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
+
+/* Customer reviews — immersive glass carousel */
+.reviews-section{position:relative}
+.reviews-shell{position:relative;padding:25px;border:1px solid rgba(174,151,255,.25);border-radius:26px;background:linear-gradient(145deg,rgba(26,25,52,.82),rgba(10,17,33,.9));box-shadow:0 28px 90px rgba(0,0,0,.28);overflow:hidden;isolation:isolate}
+.reviews-shell:before{content:"";position:absolute;inset:-1px;background:conic-gradient(from var(--review-angle,0deg),transparent 0 65%,rgba(169,139,255,.55) 75%,rgba(99,197,255,.5) 82%,transparent 91%);z-index:-2;opacity:.65;animation:reviewBorder 12s linear infinite}
+.reviews-shell:after{content:"";position:absolute;inset:1px;border-radius:25px;background:linear-gradient(145deg,rgba(20,21,43,.98),rgba(9,15,29,.98));z-index:-1}
+@keyframes reviewBorder{to{--review-angle:360deg}}
+@property --review-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.reviews-top{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:25px}
+.rating-block{display:flex;align-items:center;gap:16px}.rating-number{font-size:55px;line-height:1;font-weight:900;letter-spacing:-.07em;background:linear-gradient(130deg,#fff,#c4aaff 55%,#70caff);color:transparent;background-clip:text;-webkit-background-clip:text}.rating-number span{font-size:17px;color:#a9a9c4;letter-spacing:0}
+.stars,.review-stars{color:#ffd77a;letter-spacing:3px;text-shadow:0 0 15px rgba(255,204,103,.25)}.stars{font-size:18px}.rating-caption{font-size:12px;color:#a9aec9;margin-top:2px}
+.reviews-link{white-space:nowrap}
+.reviews-track-wrap{position:relative}
+.reviews-track{display:grid;grid-auto-columns:minmax(260px,calc((100% - 30px)/3));grid-auto-flow:column;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:5px 3px 18px;scrollbar-width:none}.reviews-track::-webkit-scrollbar{display:none}
+.review-card{position:relative;min-height:210px;display:flex;flex-direction:column;scroll-snap-align:start;padding:20px;border:1px solid rgba(170,158,222,.19);border-radius:18px;background:linear-gradient(145deg,rgba(36,37,66,.88),rgba(17,24,43,.95));box-shadow:0 13px 35px rgba(0,0,0,.18);transform-style:preserve-3d;transition:border-color .3s,box-shadow .3s,transform .2s ease;overflow:hidden}
+.review-card:before{content:"“";position:absolute;right:14px;top:28px;font-family:Georgia,serif;font-size:90px;line-height:1;color:rgba(178,151,255,.11);pointer-events:none}.review-card:hover{border-color:rgba(176,151,255,.58);box-shadow:0 20px 45px rgba(0,0,0,.3),0 0 30px rgba(128,96,235,.12)}
+.review-card-top{display:flex;align-items:center;gap:10px;position:relative;z-index:1}.review-card-top>div{display:flex;flex-direction:column;min-width:0}.review-card-top b{font-size:13px;color:#f2efff}.review-card-top small{font-size:10px;color:#9ea6c4;margin-top:2px}.review-avatar{width:36px;height:36px;display:grid;place-items:center;flex:0 0 36px;border-radius:12px;background:linear-gradient(135deg,rgba(159,120,255,.35),rgba(75,169,232,.25));border:1px solid rgba(193,171,255,.28);font-weight:850;color:#e5dcff}.review-stars{margin-left:auto;font-size:10px;letter-spacing:1px;white-space:nowrap}
+.review-card p{position:relative;z-index:1;color:#e0e2f2;font-size:14px;line-height:1.65;margin:23px 0 15px}.review-date{margin-top:auto;color:#858eae;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.reviews-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px;color:#9299b8;font-size:11px}.review-progress{width:110px;height:3px;background:rgba(255,255,255,.1);border-radius:9px;overflow:hidden}.review-progress span{display:block;width:0;height:100%;border-radius:9px;background:linear-gradient(90deg,#9b7cff,#69c7ff);transition:width .25s}
+.review-arrow{position:absolute;top:42%;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(192,174,255,.35);background:rgba(12,15,31,.9);color:white;font-size:25px;line-height:1;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,.25);transition:transform .2s,background .2s}.review-arrow:hover{transform:scale(1.1);background:#7254c9}.review-prev{left:-13px}.review-next{right:-13px}
+.reviews-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(177,160,231,.14);margin-top:13px;padding-top:15px;color:#858eaa;font-size:11px}.reviews-footer a{color:#c7b4ff}.reviews-footer a:hover{color:#fff}
+@media(max-width:900px){.reviews-track{grid-auto-columns:minmax(250px,calc((100% - 15px)/2))}}
+@media(max-width:600px){.reviews-shell{padding:17px 14px;border-radius:20px}.reviews-track{grid-auto-columns:minmax(245px,85%)}.reviews-top{align-items:flex-start}.rating-number{font-size:47px}.reviews-link{width:100%}.review-arrow{display:none}.reviews-bottom{font-size:10px}.reviews-footer{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.reviews-shell:before{animation:none}.review-card{transform:none!important}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home">NEXUS<span>.</span></a><button class="menu" id="menuBtn" aria-label="Открыть меню">☰</button><nav class="navlinks" id="navlinks"><a href="#services">Направления</a><a href="#work">Примеры работ</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#home">NEXUS<span>.</span></a><button class="menu" id="menuBtn" aria-label="Открыть меню">☰</button><nav class="navlinks" id="navlinks"><a href="#services">Направления</a><a href="#work">Примеры работ</a><a href="#reviews">Отзывы</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav></div></header>
 <main>
 <section class="hero wrap" id="home"><div class="hero-copy"><div class="eyebrow"><span class="dot"></span> Independent creative studio</div><h1><span class="grad">NEXUS</span></h1><div class="subtitle">CREATIVE STUDIO</div><div class="tagline">VIDEO EDITING <i>•</i> ROBLOX DEVELOPMENT <i>•</i> PYTHON</div><p>Создаю динамичные видео, игровые интерфейсы и небольшие цифровые решения. От аккуратного монтажа до систем и GUI в Roblox Studio.</p><div class="actions"><a class="btn primary" href="#work">Смотреть работы <span aria-hidden="true">↗</span></a><a class="btn" href="#contact">Обсудить проект</a></div><div class="hero-proof"><span><b>03</b> направления</span><span><b>01</b> цель — качество</span><span><b>100%</b> внимание к деталям</span></div></div><div class="hero-visual" aria-label="Абстрактная цифровая композиция NEXUS"><div class="visual-glow"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="visual-card card-back"><span class="mini-label">CREATIVE / 001</span><div class="fake-lines"><i></i><i></i><i></i></div><span class="mini-foot">DESIGN IN MOTION</span></div><div class="visual-card card-front"><div class="visual-top"><span class="live-dot"></span><span>NEXUS WORKSPACE</span><span>✳</span></div><div class="visual-mark">N<span>.</span></div><div class="visual-caption">IDEAS INTO<br><strong>EXPERIENCE</strong></div><div class="visual-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="visual-bottom"><span>VIDEO</span><span>ROBLOX</span><span>CODE</span></div></div><div class="float-chip chip-a">✦ Creative</div><div class="float-chip chip-b">Luau / UI / Edit</div></div></section>
 
@@ -98,6 +123,43 @@ footer{background:rgba(4,5,13,.25)}
 <article class="project">
 <svg class="preview" viewBox="0 0 720 405" role="img" aria-label="Концепт монтажа игрового видео"><defs><linearGradient id="gmbg" x2="1" y2="1"><stop stop-color="#20214a"/><stop offset="1" stop-color="#0b2538"/></linearGradient></defs><rect width="720" height="405" fill="#0b1020"/><rect x="28" y="28" width="664" height="350" rx="17" fill="url(#gmbg)"/><path d="M65 295L165 150L260 240L365 100L480 265L590 135L660 295Z" fill="#4e4b9c" opacity=".7"/><path d="M65 295L165 150L260 240L365 100L480 265L590 135L660 295" fill="none" stroke="#7bcaff" stroke-width="4"/><rect x="65" y="315" width="590" height="30" rx="7" fill="#12172b"/><rect x="77" y="323" width="120" height="14" rx="4" fill="#8e70f4"/><rect x="203" y="323" width="170" height="14" rx="4" fill="#4ea9e8"/><rect x="379" y="323" width="110" height="14" rx="4" fill="#8e70f4"/><rect x="495" y="323" width="145" height="14" rx="4" fill="#4ea9e8"/><text x="65" y="78" fill="#fff" font-size="23" font-weight="900">GAMING MONTAGE</text><text x="65" y="105" fill="#c8d4ee" font-size="13">CUTS • SOUND DESIGN • COLOR</text><circle cx="365" cy="205" r="38" fill="#0a1020" opacity=".85"/><path d="M354 183L387 205L354 227Z" fill="white"/></svg>
 <div class="project-info"><span class="tag">Video editing concept</span><h3>Игровая нарезка / YouTube</h3><p>Пример игрового монтажа с акцентом на лучшие моменты и динамику.</p><ul><li>Отобрать самые интересные моменты из записи.</li><li>Сделать аккуратные склейки, приближения и акценты.</li><li>Добавить музыку и эффекты без перегруза.</li><li>Подготовить экспорт под нужный формат YouTube.</li></ul></div></article>
+</div>
+<div class="disclaimer">Все отзывы ниже приведены по предоставленной тобой выгрузке профиля FunPay. Показана подборка из 25 отзывов; полный список и актуальный рейтинг — в твоём профиле.</div>
+</section>
+
+<section class="wrap reviews-section" id="reviews">
+  <div class="section-head">
+    <div class="kicker">Trusted by customers</div>
+    <h2>Отзывы покупателей</h2>
+    <p class="lead">Реальные впечатления покупателей о выполненных заказах на FunPay.</p>
+  </div>
+  <div class="reviews-shell">
+    <div class="reviews-top">
+      <div class="rating-block">
+        <div class="rating-number">5.0<span>/5</span></div>
+        <div><div class="stars" aria-label="Рейтинг 5 из 5">★★★★★</div><div class="rating-caption">25 отзывов за 4 месяца</div></div>
+      </div>
+      <a class="btn primary reviews-link" href="https://funpay.com/users/20788762/#reviews" target="_blank" rel="noopener noreferrer">Все отзывы на FunPay <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="reviews-track-wrap">
+      <button class="review-arrow review-prev" type="button" aria-label="Предыдущие отзывы">‹</button>
+      <div class="reviews-track" id="reviewsTrack" tabindex="0" aria-label="Подборка отзывов покупателей">
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">T</span><div><b>TiheNe</b><small>World of Tanks · 1 000 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Спасибо большое) Помог разобраться! Всё быстро и всё как в описании!»</p><div class="review-date">13 ноября</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">P</span><div><b>Peacemaker15</b><small>Roblox · 300 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Хорошо сделал модельки, был баг — исправил»</p><div class="review-date">3 октября</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">R</span><div><b>Riox1312</b><small>World of Tanks Blitz · 10 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Очень помогли. Проконсультировали. Быстро, чётко и понятно»</p><div class="review-date">1 сентября</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">B</span><div><b>Biyhha228pro</b><small>War Thunder · 10 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Супер, продавец понимающий и быстрый, 5 из 5 👍»</p><div class="review-date">29 августа</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">D</span><div><b>Demidlip2009</b><small>World of Tanks Blitz · 600 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Все круто, дешего, но помогает»</p><div class="review-date">2 сентября</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">C</span><div><b>cmt444</b><small>YouTube · 1 000 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«прикольный монтажик!»</p><div class="review-date">31 июля</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">W</span><div><b>WannydStore</b><small>Black Russia · 600 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«+rep быстро, оперативно»</p><div class="review-date">30 июля</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">P</span><div><b>PabloSellShop</b><small>Black Russia · 10 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Сделал все замечательно, респект!)»</p><div class="review-date">2 августа</div></article>
+        <article class="review-card"><div class="review-card-top"><span class="review-avatar">S</span><div><b>Sanchez111231</b><small>Прочие игры · 600 ₽</small></div><span class="review-stars">★★★★★</span></div><p>«Норм бустер, работу свою делает 👍»</p><div class="review-date">26 августа</div></article>
+      </div>
+      <button class="review-arrow review-next" type="button" aria-label="Следующие отзывы">›</button>
+    </div>
+    <div class="reviews-bottom"><span id="reviewsHint">Листай, чтобы посмотреть ещё отзывы</span><div class="review-progress"><span id="reviewProgress"></span></div></div>
+    <div class="reviews-footer"><span>Показана подборка отзывов из профиля продавца</span><a href="https://funpay.com/users/20788762/#reviews" target="_blank" rel="noopener noreferrer">Открыть профиль FunPay ↗</a></div>
+  </div>
+</section>
 
 <section class="wrap" id="about"><div class="about"><div><div class="kicker">About me</div><h2>Обо мне</h2><p class="lead">Я начинающий автор и разработчик, который совмещает видеомонтаж и программирование. Сейчас активно учусь, делаю демонстрационные проекты и собираю портфолио. Открыт к небольшим задачам, если они подходят моему текущему уровню.</p></div><div class="aboutbox"><div class="stat"><span>Python</span><span>около 1 месяца</span></div><div class="stat"><span>Roblox Studio / Lua</span><span>около 2 лет</span></div><div class="stat"><span>Видеомонтаж</span><span>около 2 месяцев</span></div><div class="stat"><span>Программы</span><span>DaVinci / CapCut</span></div></div></div></section>
 
@@ -115,5 +177,16 @@ if(!reduceMotion && 'IntersectionObserver' in window){
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
  revealTargets.forEach(el=>observer.observe(el));
 }else{revealTargets.forEach(el=>el.classList.add('visible'));}
+
+const reviewTrack=document.getElementById('reviewsTrack');
+if(reviewTrack){
+ const prev=document.querySelector('.review-prev'),next=document.querySelector('.review-next'),progress=document.getElementById('reviewProgress'),hint=document.getElementById('reviewsHint');
+ const updateReviewProgress=()=>{const max=reviewTrack.scrollWidth-reviewTrack.clientWidth;const pct=max>0?reviewTrack.scrollLeft/max*100:100;progress.style.width=pct+'%';hint.textContent=pct>=99?'Вы просмотрели всю подборку': 'Листай, чтобы посмотреть ещё отзывы';};
+ const scrollReviews=dir=>reviewTrack.scrollBy({left:dir*Math.max(270,reviewTrack.clientWidth*.82),behavior:reduceMotion?'auto':'smooth'});
+ prev.addEventListener('click',()=>scrollReviews(-1));next.addEventListener('click',()=>scrollReviews(1));reviewTrack.addEventListener('scroll',updateReviewProgress,{passive:true});window.addEventListener('resize',updateReviewProgress);updateReviewProgress();
+ if(!reduceMotion && window.matchMedia('(pointer:fine)').matches){
+  reviewTrack.querySelectorAll('.review-card').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;card.style.transform='perspective(800px) rotateX('+((.5-y)*5)+'deg) rotateY('+((x-.5)*7)+'deg) translateY(-3px)';});card.addEventListener('pointerleave',()=>{card.style.transform='';});});
+ }
+}
 </script>
 </body></html>
