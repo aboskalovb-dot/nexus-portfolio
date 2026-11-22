@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 405" role="img" aria-labelledby="title desc">
+<title id="title">NEXUS gaming montage</title><desc id="desc">Neon purple gaming video editing preview with clapperboard, play symbol and multitrack timeline.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#211944"/><stop offset=".6" stop-color="#151a37"/><stop offset="1" stop-color="#08283b"/></linearGradient>
+ <linearGradient id="purple" x2="1" y2="1"><stop stop-color="#c084fc"/><stop offset="1" stop-color="#6d35df"/></linearGradient>
+ <linearGradient id="blue" x2="1"><stop stop-color="#65d4ff"/><stop offset="1" stop-color="#5576e8"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#a18cff" stroke-opacity=".07"/></pattern>
+</defs>
+<rect width="720" height="405" fill="url(#bg)"/><rect width="720" height="405" fill="url(#grid)"/>
+<circle cx="515" cy="170" r="165" fill="#8b45ff" opacity=".15" filter="url(#glow)"/>
+<rect x="24" y="22" width="672" height="361" rx="22" fill="#0d1025" stroke="#8058ed" stroke-opacity=".7"/>
+<rect x="24" y="22" width="672" height="52" rx="22" fill="#211c43"/>
+<circle cx="52" cy="48" r="7" fill="#ff648f"/><circle cx="76" cy="48" r="7" fill="#ffca68"/><circle cx="100" cy="48" r="7" fill="#54e2b0"/>
+<text x="360" y="54" text-anchor="middle" fill="#e5e0ff" font-size="16" font-family="Arial" letter-spacing="2">NEXUS • GAMING MONTAGE</text>
+<text x="58" y="119" fill="#c4a5ff" font-size="14" font-family="Arial" font-weight="700" letter-spacing="2">VIDEO EDITING</text>
+<text x="58" y="158" fill="#fff" font-size="29" font-family="Arial" font-weight="700">Твой геймплей</text><text x="58" y="192" fill="#fff" font-size="29" font-family="Arial" font-weight="700">как трейлер</text>
+<text x="58" y="222" fill="#aeb5d4" font-size="14" font-family="Arial">Динамика • звук • цветокоррекция</text>
+<rect x="58" y="246" width="190" height="42" rx="21" fill="url(#purple)"/><text x="153" y="272" text-anchor="middle" fill="#fff" font-size="14" font-family="Arial" font-weight="700">СОЗДАТЬ МОНТАЖ →</text>
+<g transform="translate(350 95)" filter="url(#glow)">
+ <path d="M42 50l36-35h185l-28 35z" fill="#a98aff" stroke="#d8c4ff" stroke-width="2"/>
+ <path d="M42 50h221v133H42z" fill="#21184c" stroke="#9b75ff" stroke-width="3"/>
+ <path d="M54 60h197v111H54z" fill="#10152f"/>
+ <path d="M54 60h197l-18 22H54z" fill="#46317e"/>
+ <path d="M74 60l-18 22M120 60l-18 22M166 60l-18 22M212 60l-18 22" stroke="#cbb8ff" stroke-width="9"/>
+ <path d="M138 99l43 26-43 26z" fill="#fff"/>
+</g>
+<circle cx="510" cy="185" r="42" fill="#160f35" stroke="#a87aff" stroke-width="3" filter="url(#glow)"/><path d="M499 163l32 22-32 22z" fill="#fff"/>
+<rect x="58" y="315" width="604" height="42" rx="10" fill="#12172e" stroke="#40346f"/>
+<g><rect x="72" y="325" width="120" height="10" rx="4" fill="url(#purple)"/><rect x="198" y="325" width="160" height="10" rx="4" fill="url(#blue)"/><rect x="364" y="325" width="115" height="10" rx="4" fill="url(#purple)"/><rect x="485" y="325" width="160" height="10" rx="4" fill="url(#blue)"/>
+<rect x="72" y="341" width="180" height="5" rx="3" fill="#4e3b83"/><rect x="258" y="341" width="220" height="5" rx="3" fill="#345c87"/><rect x="484" y="341" width="160" height="5" rx="3" fill="#4e3b83"/></g>
+<path d="M365 308v55" stroke="#fff" stroke-width="2" opacity=".8"/>
+</svg>
